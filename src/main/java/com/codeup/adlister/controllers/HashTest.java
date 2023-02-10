@@ -6,7 +6,6 @@ public class HashTest {
         String hash = BCrypt.hashpw(password, BCryptCrypt.gensalt());
 
         boolean passwardsMatch = BCrypt.checkpw(password,hash);
-        system
 
 
     }
