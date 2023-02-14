@@ -5,18 +5,34 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
+    private String username;
+    public String imageUrl;
 
-    public Ad(long id, long userId, String title, String description) {
+    //Default constructor for default image
+    public Ad() {
+        this.imageUrl = "/img/default.png";
+    }
+
+    public Ad(long id, long userId, String title, String description, String imageUrl) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.imageUrl = imageUrl;
     }
 
-    public Ad(long userId, String title, String description) {
+    public Ad(long userId, String title, String description, String imageUrl) {
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.imageUrl = imageUrl;
+    }
+
+    public Ad(Long id, String title, String description, String imageUrl) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.imageUrl = imageUrl;
     }
 
     public long getId() {
@@ -49,5 +65,21 @@ public class Ad {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

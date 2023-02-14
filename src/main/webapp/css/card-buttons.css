@@ -1,0 +1,37 @@
+.btn {
+    background: #9857de;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    background: #fdc500;
+}
+
+.delete-btn {
+    background: #F94144;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.delete-btn:hover {
+    background: #d00000;
+    color: white;
+}
+
+.edit-btn {
+    background: #33a1fd;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    transition-duration: 0.4s;
+}
+
+.edit-btn:hover {
+    background: #2176ff;
+    color: white;
+}

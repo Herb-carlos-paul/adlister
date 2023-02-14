@@ -1,0 +1,78 @@
+.edit-profile {
+    position: relative;
+    left: 10%;
+    bottom: 20%;
+    border: none;
+    height: 700px;
+    width: 950px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+.create-box {
+    font-size: 20px;
+    text-align: center;
+    width: 800px;
+    height: 80px;
+    margin: 25px 25px;
+    border-radius: 40px;
+    border: none;
+}
+.checkbox {
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    color: white;
+
+}
+.select-boxes {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    top: 20px;
+    color: white;
+}
+
+h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+
+}
+
+.btn {
+    position: relative;
+    width: 300px;
+    height: 70px;
+    margin-top: 50px;
+    border-radius: 40px;
+    left: 280px;
+    background-color: #90BE6D;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border:none;
+}
+
+label {
+    color: pink; !important;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    /*background:  url(/img/electronic.mp4) no-repeat center center;*/
+    background-color: pink; !important !important;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    overflow: hidden;
+}

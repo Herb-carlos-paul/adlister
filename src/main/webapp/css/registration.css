@@ -1,0 +1,277 @@
+.registration {
+    position: relative;
+    left: 15%;
+    bottom: 20%;
+    border: none;
+    height: 650px;
+    width: 800px;
+    padding-left: 50px;
+    padding-right: 50px;
+    /*border-radius: 40px;*/
+    /*background-color: #90BE6D;*/
+    /*background-image: linear-gradient(45deg, rgba(30,30,30,.3) 50%, rgba(87, 117, 144, 9) 50%);*/
+    /*box-shadow: 20px 17px 14px 3px rgba(0,0,0,0.64);*/
+    /*opacity: 90%;*/
+}
+
+.box-design {
+    font-size: 20px;
+    text-align: center;
+    width: 650px;
+    height: 70px;
+    margin: 25px 25px;
+    border-radius: 40px;
+    border: none;
+
+}
+
+.btn {
+    position: relative;
+    width: 300px;
+    height: 70px;
+    margin: 20px 25px;
+    border-radius: 40px;
+    left: 175px;
+    background-color: #F3722C;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+h2 {
+    position: relative;
+    top: 15px;
+    text-align: center;
+    color: white;
+    letter-spacing: 7px;
+}
+
+body {
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.6) 100%),url(/img/pexels-andrew-mcmurtrie-3973905.jpg) no-repeat center center/cover;*/
+    /*background-image: url(/img/electronic.mp4);*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*z-index: 2;*/
+    /*overflow: hidden;*/
+}
+
+.error{
+    position: relative;
+    left: 35%;
+    text-align: center;
+    width: 30%;
+    height: 30px;
+    background-color: red;
+    display: none;
+    color: white ;
+    opacity: 85%;
+    padding: 0;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+
+/*Media Queries*/
+
+@media screen and (min-width:576px) {
+    .navbar {
+        height: 40rem;
+        width: auto;
+        background-image: none;
+        font-weight: bold;
+        text-align: center;
+
+    }
+
+
+
+    .registration {
+        position: relative;
+        width: 750px;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        left: 2%;
+    }
+
+    body {
+        margin: 0;
+        /*background: gray linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%) url(/img/electronic.mp4) no-repeat center center;*/
+        background-image: url(/img/electronic.mp4);
+
+    }
+
+    .box-design {
+        width: 650px;
+        height: 120px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 60px;
+
+    }
+
+    .btn {
+        position: relative;
+        left: 32%;
+        width: 200px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .sub-nav-link {
+        font-size: 100px;
+        padding: 0;
+    }
+
+}
+
+/*!* Medium devices (tablets, 768px and up) *!*/
+@media screen and (min-width:768px) {
+    .navbar {
+        height: 5rem;
+        width: auto;
+        background-image: none;
+        font-weight: normal;
+        text-align: center;
+
+    }
+
+
+
+    .registration {
+        position: relative;
+        width: 625px;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        left: 5%;
+    }
+
+    body {
+        background-color: gray;
+        margin: 0;
+        /*background-image: url(/img/electronic.mp4);*/
+        /*background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.6) 100%),url(/img/pexels-andrew-mcmurtrie-3973905.jpg) no-repeat center center/cover;*/
+    }
+
+    video{
+        top:0;
+        left: 0;
+        position: absolute;
+        width: 100vw;
+        height: 110vh;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .box-design {
+        width: 550px;
+        height: 80px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 60px;
+
+    }
+
+    .btn {
+        position: relative;
+        left: 32%;
+        width: 200px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .sub-nav-link {
+        font-size: 100px;
+        padding: 0;
+    }
+
+}
+
+@media screen and (min-width:992px) {
+    .navbar {
+        font-weight: normal;
+    }
+    .registration {
+        position: relative;
+        left: 15%;
+        bottom: 20%;
+        border: none;
+        height: 650px;
+        width: 800px;
+        padding-left: 50px;
+        padding-right: 50px;
+
+    }
+
+    .box-design {
+        font-size: 20px;
+        text-align: center;
+        width: 650px;
+        height: 70px;
+        margin: 25px 25px;
+        border-radius: 40px;
+        border: none;
+
+    }
+
+    .btn {
+        position: relative;
+        width: 300px;
+        height: 70px;
+        margin: 20px 25px;
+        border-radius: 40px;
+        left: 175px;
+        background-color: #F3722C;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+
+    h2 {
+        position: relative;
+        top: 15px;
+        text-align: center;
+        color: white;
+        letter-spacing: 7px;
+    }
+
+    body {
+        width: 100%;
+        height: auto;
+        /*background-image: url(/img/electronic.mp4);*/
+        /*background: url(/img/pexels-andrew-mcmurtrie-3973905.jpg) no-repeat center center/cover;*/
+        /*background-color: pink;*/
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    .error{
+        position: relative;
+        left: 35%;
+        text-align: center;
+        width: 30%;
+        height: 30px;
+        background-color: red;
+        display: none;
+        color: white ;
+        opacity: 85%;
+        padding: 0;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+}

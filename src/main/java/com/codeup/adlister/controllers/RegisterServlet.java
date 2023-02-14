@@ -2,7 +2,8 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,12 +22,19 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        User uniqueUser = DaoFactory.getUsersDao().findByUsername(username);
 
-        // validate input
+        // validate input for email 'email@email.com'
+        Pattern emailPattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Matcher emailMatcher = emailPattern.matcher(email);
+        boolean emailHasCorrectFormat = emailMatcher.matches();
+
         boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
-            || password.isEmpty()
-            || (! password.equals(passwordConfirmation));
+                || uniqueUser != null
+                || email.isEmpty()
+                || !emailHasCorrectFormat
+                || password.isEmpty()
+                || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
             response.sendRedirect("/register");
@@ -39,3 +47,4 @@ public class RegisterServlet extends HttpServlet {
         response.sendRedirect("/login");
     }
 }
+
