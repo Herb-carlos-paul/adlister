@@ -13,6 +13,12 @@ import java.io.IOException;
 
 @WebServlet(name="AdEditServlet", urlPatterns = "/ads/edit")
 public class AdEditServlet extends HttpServlet {
+    //immutable constants
+    private static final String URL_PATTERN = "/ads/edit";
+    private static final String EDIT_JSP_PATH = "/WEB-INF/ads/edit.jsp";
+    private static final String REDIRECT_PATH = "/redirect";
+    private static final String PROFILE_PATH = "/profile";
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String query = request.getQueryString();
@@ -24,9 +30,9 @@ public class AdEditServlet extends HttpServlet {
             //Set this sessions attribute to current ad
             request.getSession().setAttribute("ad", currentAd);
 
-            request.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(request, response);
+            request.getRequestDispatcher(EDIT_JSP_PATH).forward(request, response);
         } catch (Exception e) {
-            response.sendRedirect("/redirect");
+            response.sendRedirect(REDIRECT_PATH);
         }
     }
 
@@ -40,18 +46,20 @@ public class AdEditServlet extends HttpServlet {
                 || description.isEmpty();
 
         if (inputHasErrors){
-            response.sendRedirect("/ads/edit");
+            response.sendRedirect(URL_PATTERN);
             return;
         }
 
         try {
+            //We chained our constructors
             Ad ad = new Ad(id, title, description, image);
+
             //Create update method in DAO
             DaoFactory.getAdsDao().updateAd(ad);
             request.getSession().setAttribute("ad", ad);
-            response.sendRedirect("/profile");
+            response.sendRedirect(PROFILE_PATH);
         }catch (Exception e){
-            response.sendRedirect("/profile");
+            response.sendRedirect(PROFILE_PATH);
         }
     }
 }

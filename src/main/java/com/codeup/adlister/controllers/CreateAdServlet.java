@@ -1,3 +1,4 @@
+
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
@@ -13,14 +14,21 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
+
+    private static final String CREATE_JSP_PATH = "/WEB-INF/ads/create.jsp";
+    private static final String LOGIN_PATH = "/login";
+    private static final String ADS_PATH = "/ads";
+    private static final String CREATE_ADS_PATH = "/ads/create";
+    private static final String DEFAULT_IMAGE_PATH = "/img/default.jpeg";
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
-            request.getSession().setAttribute("last-page", "/ads/create");
-            response.sendRedirect("/login");
+            request.getSession().setAttribute("last-page", "CREATE_ADS_PATH");
+            response.sendRedirect(LOGIN_PATH);
             return;
         }
         request.setAttribute("categories", DaoFactory.getCategoriesDao().all());
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(request, response);
+        request.getRequestDispatcher(CREATE_JSP_PATH).forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -30,12 +38,12 @@ public class CreateAdServlet extends HttpServlet {
 
         // Set default image if an image is not submitted
         if (image == null || image.isEmpty()) {
-            image = "/img/default.jpeg";
+            image = DEFAULT_IMAGE_PATH;
         }
 
         boolean inputHasErrors = title.isEmpty() || description.isEmpty();
         if (inputHasErrors) {
-            response.sendRedirect("/ads/create");
+            response.sendRedirect(CREATE_ADS_PATH);
             return;
         }
 
@@ -48,9 +56,9 @@ public class CreateAdServlet extends HttpServlet {
             for (String categoryId : categories) {
                 DaoFactory.getAdsDao().linkAdToCategory(adId, Long.parseLong(categoryId));
             }
-            response.sendRedirect("/ads");
+            response.sendRedirect(ADS_PATH);
         } catch (RuntimeException e) {
-            request.getRequestDispatcher("/WEB-INF/ads/create.jsp").forward(request, response);
+            request.getRequestDispatcher(CREATE_JSP_PATH).forward(request, response);
         }
     }
 }

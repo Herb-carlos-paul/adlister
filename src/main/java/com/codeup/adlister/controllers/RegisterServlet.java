@@ -29,6 +29,7 @@ public class RegisterServlet extends HttpServlet {
         Matcher emailMatcher = emailPattern.matcher(email);
         boolean emailHasCorrectFormat = emailMatcher.matches();
 
+        //Conditions must be met inorder to be invalid
         boolean inputHasErrors = username.isEmpty()
                 || uniqueUser != null
                 || email.isEmpty()

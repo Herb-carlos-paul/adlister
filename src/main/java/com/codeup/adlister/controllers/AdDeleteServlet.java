@@ -16,17 +16,15 @@ import java.io.IOException;
 public class AdDeleteServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Get the query string from the URL, which should contain the ID
         String query = request.getQueryString();
+        // Parse the ID from the query
         Long id = Long.valueOf(query.substring(3));
+        // Delete the ad from the db.  Delete method found in MySQLAdsDao (see ads db for proof)
         DaoFactory.getAdsDao().delete(id);
-
+        // Redirect the user to profile
         response.sendRedirect("/profile");
     }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-    }
-
 
 }
 
