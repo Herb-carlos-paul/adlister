@@ -25,6 +25,7 @@
                         <h3><strong><c:out value="${ad.title}"/></strong></h3>
                         <img src="<c:out value="${ad.imageUrl}"/>" alt=${ad.title} width="175" height="200">
                         <p><c:out value="${ad.description}"/></p>
+                        <!-- getCategoriesLinkedWithAd returns a list collection of category objects queried from the DB separates them by a comma delimiter   -->
                         <p><strong>Categories:</strong> <c:out value="${fn:join(categoriesDao.getCategoriesLinkedWithAd(ad.id).toArray(), ',')}"/></p>
                         <a class="btn delete-btn deletebtn" id="deletebtn" href="/ads/delete?id=${ad.id}">Delete</a>
                         <a class="btn btn edit-btn editbtn" id="editbtn" href="/ads/edit?id=${ad.id}">Edit</a>
